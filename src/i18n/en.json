@@ -1,0 +1,10 @@
+{
+  "menu": {
+    "home": "Home",
+    "catalog": "Catalog",
+    "recommendations": "Recommendations",
+    "about_us": "About us",
+    "contact": "Contact",
+    "blog": "Blog"
+  }
+}
