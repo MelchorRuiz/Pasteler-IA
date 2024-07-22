@@ -1,10 +1,20 @@
 ---
-import { getI18N } from '../i18n';
+import { getI18N, getPaths } from "../i18n";
 const i18n = getI18N(Astro.currentLocale);
+const paths = getPaths(Astro.currentLocale);
+
+const links = [
+  { href: paths.home, text: i18n.menu.home },
+  { href: paths.catalog, text: i18n.menu.catalog },
+  { href: paths.recommendations, text: i18n.menu.recommendations },
+  { href: paths.about_us, text: i18n.menu.about_us },
+  { href: paths.contact, text: i18n.menu.contact },
+  { href: paths.blog, text: i18n.menu.blog },
+];
 ---
 
 <nav
-  class="flex justify-between px-5 lg:px-10 py-2 lg:py-4 items-center bg-black text-white"
+  class="fixed w-screen flex justify-between px-5 lg:px-10 py-4 items-center bg-darkGray/20 text-white z-30"
 >
   <div class="flex gap-1 items-center">
     <img src="/favicon.svg" alt="favicon" class="w-8 h-8 lg:w-10 lg:h-10" />
@@ -26,23 +36,35 @@ const i18n = getI18N(Astro.currentLocale);
     </svg>
   </div>
   <ul
-    class="fixed lg:relative top-0 left-0 bottom-0 right-0 bg-black/90 flex flex-col lg:flex-row justify-center items-center gap-3 lg:text-lg z-20"
+    class="fixed lg:relative top-0 left-0 bottom-0 right-0 bg-darkGray/90 lg:bg-transparent flex flex-col lg:flex-row justify-center items-center gap-5 lg:text-lg z-20"
   >
-    <li><a href="/">{i18n.menu.home}</a></li>
-    <li><a href="/catalogo">{i18n.menu.catalog}</a></li>
-    <li><a href="/recomendaciones">{i18n.menu.recommendations}</a></li>
-    <li><a href="/nosotros">{i18n.menu.about_us}</a></li>
-    <li><a href="/contacto">{i18n.menu.contact}</a></li>
-    <li><a href="/blog">{i18n.menu.blog}</a></li>
+    {
+      links.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="relative lg:after:w-0 lg:hover:after:w-full lg:after:h-[2px] lg:hover:after:bg-white lg:after:absolute lg:after:-bottom-2 lg:after:left-0 lg:after:rounded-lg lg:after:transition-all lg:after:duration-300 lg:after:ease-in-out"
+          >
+            {link.text}
+          </a>
+        </li>
+      ))
+    }
     <li>
       <select
         name="language"
         id="language"
         class="p-2 bg-black cursor-pointer rounded-lg ring-1 ring-white focus-visible:outline-none"
       >
-        <option value="es" selected={Astro.currentLocale === 'es'}>Español</option>
-        <option value="en" selected={Astro.currentLocale === 'en'}>English</option>
-        <option value="fr" selected={Astro.currentLocale === 'fr'}>Français</option>
+        <option value="es" selected={Astro.currentLocale === "es"}
+          >Español</option
+        >
+        <option value="en" selected={Astro.currentLocale === "en"}
+          >English</option
+        >
+        <option value="fr" selected={Astro.currentLocale === "fr"}
+          >Français</option
+        >
       </select>
     </li>
   </ul>
@@ -51,7 +73,7 @@ const i18n = getI18N(Astro.currentLocale);
 <script>
   const language = document.querySelector("#language") as HTMLSelectElement;
   language.addEventListener("change", () => {
-    const path = language.value === 'es' ? '/' : `/${language.value}`;
+    const path = language.value === "es" ? "/" : `/${language.value}`;
     window.location.href = path;
   });
 </script>
@@ -70,7 +92,9 @@ const i18n = getI18N(Astro.currentLocale);
           ul.style.display = "flex";
         }
       });
-      ul.addEventListener("click", () => {
+      ul.addEventListener("click", (e) => {
+        const target = e.target as HTMLElement;
+        if (target.tagName !== "UL") return;
         ul.style.display = "none";
       });
     } else {
