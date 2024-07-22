@@ -1,0 +1,44 @@
+<nav class="flex justify-between px-5 lg:px-10 py-2 lg:py-4 items-center bg-black text-white">
+  <div class="flex gap-1 items-center">
+    <img src="/favicon.svg" alt="favicon" class="w-8 h-8 lg:w-10 lg:h-10">
+    <p class="text-lg lg:text-2xl uppercase">Cervecería IA</p>
+  </div>
+  <div id="menu" class="cursor-pointer lg:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    </svg>    
+  </div>
+  <ul class="fixed lg:relative top-0 left-0 bottom-0 right-0 bg-black/60 flex flex-col lg:flex-row justify-center items-center gap-3 lg:text-lg">
+    <li><a href="/">Inicio</a></li>
+    <li><a href="/catalogo">Catalogo</a></li>
+    <li><a href="/recomendaciones">Recomendaciones</a></li>
+    <li><a href="/nosotros">Nosotros</a></li>
+    <li><a href="/contacto">Contacto</a></li>
+    <li><a href="/blog">Blog</a></li>
+  </ul>
+</nav>
+<script>
+  const svg = document.querySelector('#menu') as HTMLElement
+  const ul = document.querySelector('nav ul') as HTMLUListElement
+  const isActivated = false
+  
+  const addListeners = () => {
+    if (window.innerWidth < 1024) {
+      ul.style.display = 'none'
+      svg.addEventListener('click', () => {
+        if (isActivated) {
+          ul.style.display = 'none'
+        } else {
+          ul.style.display = 'flex'
+        }
+      })
+      ul.addEventListener('click', () => {
+        ul.style.display = 'none'
+      })
+    } else {
+      ul.style.display = 'flex'
+    }
+  }
+  addListeners()
+  window.addEventListener('resize', addListeners)
+</script>
