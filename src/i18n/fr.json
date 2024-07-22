@@ -1,4 +1,6 @@
 {
+  "title": "Bienvenue à notre site",
+  "description": "Découvrez des bières artisanales recommandées par l'intelligence artificielle. Trouvez votre bière parfaite en fonction de vos goûts et de votre personnalité. Santé intelligente!",
   "menu": {
     "home": "Accueil",
     "catalog": "Catalogue",

@@ -1,0 +1,45 @@
+---
+import { getI18N } from "../i18n";
+const i18n = getI18N(Astro.currentLocale);
+---
+
+<section
+  class="relative w-full bg-[url('/hero.webp')] bg-no-repeat bg-center bg-cover flex flex-col justify-between items-center pb-4 text-white before:absolute before:top-0 before:left-0 before:w-full before:h-full z-0 before:bg-black/70"
+  style="height: calc(100vh - 73px);"
+>
+  <div class="py-12 px-4 flex flex-col justify-start items-center">
+    <h1
+      class="relative font-jersey font-normal text-center text-4xl md:text-5xl lg:text-6xl"
+      style="text-shadow: 3px 1px 2px black;"
+    >
+      {i18n.title}
+    </h1>
+    <div class="relative h-[2px] bg-white my-5 rounded-lg w-1/6"></div>
+    <h3 class="relative text-center lg:text-lg max-w-[600px]">
+      {i18n.description}
+    </h3>
+  </div>
+  <div class="z-10">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      id="down-arrow"
+      class="size-16 text-white/30 hover:text-white transition-all cursor-pointer"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+    </svg>
+  </div>
+</section>
+<script>
+  const svg = document.querySelector("down-arrow") as SVGSVGElement
+  const beers = document.querySelector("#beers") as HTMLElement
+  svg.addEventListener("click", () => {
+    window.scrollTo({ top: beers.offsetTop, behavior: "smooth" })
+  })
+</script>
