@@ -6,5 +6,9 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   output: "server",
   adapter: vercel(),
-  integrations: [tailwind()]
+  integrations: [tailwind()],
+  i18n: {
+    defaultLocale: "es",
+    locales: ["es", "en", "fr"],
+  }
 });
