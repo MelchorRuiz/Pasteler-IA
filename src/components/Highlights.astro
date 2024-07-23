@@ -17,13 +17,13 @@ const i18n = getI18N(Astro.currentLocale);
 <script>
   const response = await fetch('/api/cake');
   const { data } = await response.json();
-  const beers = data.slice(0, 6);
+  const cakes = data.slice(0, 6);
 
-  const beerCards = document.querySelectorAll('.beer-card');
-  beerCards.forEach((card, index) => {
-    const beer = beers[index];
+  const cakeCards = document.querySelectorAll('.cake-card');
+  cakeCards.forEach((card, index) => {
+    const cake = cakes[index];
     const img = card.querySelector('img') as HTMLImageElement;
-    img.src = beer.img;
-    img.alt = beer.name;
+    img.src = cake.img;
+    img.alt = cake.name;
   });
 </script>

@@ -37,8 +37,8 @@ const i18n = getI18N(Astro.currentLocale);
 </section>
 <script>
   const svg = document.querySelector("down-arrow") as SVGSVGElement
-  const beers = document.querySelector("#beers") as HTMLElement
+  const cakes = document.querySelector("#cakes") as HTMLElement
   svg.addEventListener("click", () => {
-    window.scrollTo({ top: beers.offsetTop, behavior: "smooth" })
+    window.scrollTo({ top: cakes.offsetTop, behavior: "smooth" })
   })
 </script>
