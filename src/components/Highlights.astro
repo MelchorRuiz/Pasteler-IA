@@ -1,11 +1,21 @@
 ---
 import Cake from "./Cake.astro";
-import { getI18N } from "../i18n";
+import { getI18N, getPaths } from "../i18n";
 const i18n = getI18N(Astro.currentLocale);
+const paths = getPaths(Astro.currentLocale);
 ---
 
-<section class="p-4 lg:px-10">
-  <h2 class="text-center lg:text-left text-white text-3xl md:text-4xl lg:text-5xl pb-6">{i18n.home.highlights}</h2>
+<section
+  class="p-4 lg:px-10"
+  id="cakes"
+  data-locale={Astro.currentLocale}
+  data-catalog={paths.catalog}
+>
+  <h2
+    class="text-center lg:text-left text-white text-3xl md:text-4xl lg:text-5xl pb-6 lg:pl-6 pt-10"
+  >
+    {i18n.home.highlights}
+  </h2>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     <Cake />
     <Cake />
@@ -13,17 +23,44 @@ const i18n = getI18N(Astro.currentLocale);
     <Cake />
     <Cake />
     <Cake />
-</section>
-<script>
-  const response = await fetch('/api/cake');
-  const { data } = await response.json();
-  const cakes = data.slice(0, 6);
+  </div>
+  <div class="flex justify-center py-5">
+    <a
+      class="lg:text-xl text-white text-center bg-gray-500 px-4 py-2 lg:py-3 rounded-lg w-full md:w-1/2 lg:w-1/4"
+      href={paths.catalog}
+    >
+      {i18n.home.see_more}
+    </a>
+  </div>
+  <script>
+    const section = document.querySelector("#cakes") as HTMLElement;
+    const locale = section.dataset.locale;
+    const catalog = section.dataset.catalog;
 
-  const cakeCards = document.querySelectorAll('.cake-card');
-  cakeCards.forEach((card, index) => {
-    const cake = cakes[index];
-    const img = card.querySelector('img') as HTMLImageElement;
-    img.src = cake.img;
-    img.alt = cake.name;
-  });
-</script>
+    const response = await fetch("/api/cake");
+    const { data } = await response.json();
+    const cakes = data.slice(0, 6);
+
+    const cakeCards = document.querySelectorAll(
+      ".cake-card",
+    ) as NodeListOf<HTMLAnchorElement>;
+    cakeCards.forEach((card, index) => {
+      const cake = cakes[index];
+
+      card.href = `${catalog}/${cake.id}`;
+
+      const img = card.querySelector("img") as HTMLImageElement;
+      img.src = cake.img;
+      img.alt = cake.name;
+
+      const h3 = card.querySelector("h3") as HTMLHeadingElement;
+      h3.textContent = cake.name;
+
+      const span = card.querySelector("span") as HTMLSpanElement;
+      span.textContent = "$" + cake.price;
+
+      const p = card.querySelector("p") as HTMLParagraphElement;
+      p.textContent = cake.description;
+    });
+  </script>
+</section>

@@ -10,6 +10,7 @@
     "blog": "Blog"
   },
   "home": {
-    "highlights": "Featured Cakes"
+    "highlights": "Featured Cakes",
+    "see_more": "See more"
   }
 }

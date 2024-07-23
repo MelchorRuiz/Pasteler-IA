@@ -10,6 +10,7 @@
     "blog": "Blog"
   },
   "home": {
-    "highlights": "Pasteles Destacados"
+    "highlights": "Pasteles Destacados",
+    "see_more": "Ver más"
   }
 }
