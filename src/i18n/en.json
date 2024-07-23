@@ -1,6 +1,6 @@
 {
   "title": "Welcome to our store",
-  "description": "Discover craft beers recommended by artificial intelligence. Find your perfect beer based on your tastes and personality. Smart health!",
+  "description": "Welcome to Pasteler-IA: where innovation meets tradition. Our master pastry chefs, together with artificial intelligence, create customized delicacies that will delight your palate. Explore our options and find the perfect dessert for any occasion!",
   "menu": {
     "home": "Home",
     "catalog": "Catalog",
@@ -8,5 +8,8 @@
     "about_us": "About us",
     "contact": "Contact",
     "blog": "Blog"
+  },
+  "home": {
+    "highlights": "Featured Cakes"
   }
 }

@@ -3,8 +3,8 @@ import { MongoClient } from 'mongodb';
 
 const uri = import.meta.env.MONGODB_URI;
 const client = new MongoClient(uri);
-const database = client.db('cerveceria-ia');
-const beers = database.collection('beers');
+const database = client.db('pasteler-ia');
+const cakes = database.collection('cakes');
 
 export const GET: APIRoute = async ({ request }) => {
   const url = new URL(request.url);
@@ -12,16 +12,16 @@ export const GET: APIRoute = async ({ request }) => {
   const limit = 10;
   const skip = (page - 1) * limit;
 
-  const totalItems = await beers.countDocuments();
+  const totalItems = await cakes.countDocuments();
   const totalPages = Math.ceil(totalItems / limit);
 
-  const results = (await beers.find().skip(skip).limit(limit).toArray()).map((beer) => {
-    const { _id, ...rest } = beer;
+  const results = (await cakes.find().skip(skip).limit(limit).toArray()).map((cake) => {
+    const { _id, ...rest } = cake;
     return { id: _id, ...rest }; 
   });
 
   if (results.length === 0) {
-    return new Response(JSON.stringify({ message: 'No beers found' }),
+    return new Response(JSON.stringify({ message: 'No cakes found' }),
       { headers: { "content-type": "application/json" }, status: 404 }
     );
   }
@@ -41,7 +41,7 @@ export const GET: APIRoute = async ({ request }) => {
 
 export const POST: APIRoute = async ({ request }) => {
   const body = await request.json();
-  const result = await beers.insertOne(body);
+  const result = await cakes.insertOne(body);
 
   return new Response(JSON.stringify(result),
     { headers: { "content-type": "application/json" }, status: 201 }
@@ -50,7 +50,7 @@ export const POST: APIRoute = async ({ request }) => {
 
 export const PUT: APIRoute = async ({ request }) => {
   const body = await request.json();
-  const result = await beers.updateOne({ _id: body.id }, { $set: body });
+  const result = await cakes.updateOne({ _id: body.id }, { $set: body });
 
   return new Response(JSON.stringify(result),
     { headers: { "content-type": "application/json" }, status: 200 }
@@ -59,7 +59,7 @@ export const PUT: APIRoute = async ({ request }) => {
 
 export const DELETE: APIRoute = async ({ request }) => {
   const body = await request.json();
-  const result = await beers.deleteOne({ _id: body.id });
+  const result = await cakes.deleteOne({ _id: body.id });
 
   return new Response(JSON.stringify(result),
     { headers: { "content-type": "application/json" }, status: 200 }

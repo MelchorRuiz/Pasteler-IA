@@ -1,6 +1,6 @@
 {
   "title": "Bienvenue à notre site",
-  "description": "Découvrez des bières artisanales recommandées par l'intelligence artificielle. Trouvez votre bière parfaite en fonction de vos goûts et de votre personnalité. Santé intelligente!",
+  "description": "Bienvenue chez Pasteler-IA, où l'innovation rencontre la tradition. Nos maîtres pâtissiers, associés à l'intelligence artificielle, créent des délices personnalisés qui raviront votre palais. Explorez nos options et trouvez le dessert idéal pour chaque occasion !",
   "menu": {
     "home": "Accueil",
     "catalog": "Catalogue",
@@ -8,5 +8,8 @@
     "about_us": "Sur Nous",
     "contact": "Contact",
     "blog": "Blog"
+  },
+  "home": {
+    "highlights": "Gâteaux en Vdette"
   }
 }
