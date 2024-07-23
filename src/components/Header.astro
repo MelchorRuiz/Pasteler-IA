@@ -11,7 +11,7 @@ const links = [
 ---
 
 <nav
-  class="fixed w-screen flex justify-between px-5 lg:px-10 py-4 items-center bg-darkGray/20 text-white z-30"
+  class="fixed w-screen flex justify-between px-5 lg:px-10 py-4 items-center text-white z-30"
 >
   <div class="flex gap-1 items-center">
     <img src="/favicon.svg" alt="favicon" class="w-8 h-8 lg:w-10 lg:h-10" />
@@ -66,6 +66,25 @@ const links = [
     </li>
   </ul>
 </nav>
+
+<style>
+  nav {
+    animation: fadeIn 0.5s ease;
+    animation-timeline: scroll();
+    animation-range: 0 100vh;
+    background: theme("colors.darkGray");
+  }
+  @keyframes fadeIn {
+    from {
+      background-color: transparent;
+      backdrop-filter: blur(0px);
+    }
+    to {
+      background: theme("colors.darkGray");
+      backdrop-filter: blur(5px);
+    }
+  }
+</style>
 
 <script>
   const language = document.querySelector("#language") as HTMLSelectElement;
