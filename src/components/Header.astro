@@ -5,12 +5,13 @@ const paths = getPaths(Astro.currentLocale);
 
 const links = [
   { href: paths.home, text: i18n.menu.home },
-  { href: paths.catalog, text: i18n.menu.catalog },
   { href: paths.recommendations, text: i18n.menu.recommendations },
+  { href: paths.catalog, text: i18n.menu.catalog },
 ];
 ---
 
 <nav
+  id="header"
   class="fixed w-screen flex justify-between px-5 lg:px-10 py-4 items-center text-white z-30"
 >
   <div class="flex gap-1 items-center">
@@ -94,14 +95,14 @@ const links = [
   });
 </script>
 <script>
-  const svg = document.querySelector("#menu") as HTMLElement;
+  const menu = document.querySelector("#menu") as HTMLElement;
   const ul = document.querySelector("nav ul") as HTMLUListElement;
   const isActivated = false;
 
   const addListeners = () => {
     if (window.innerWidth < 1024) {
       ul.style.display = "none";
-      svg.addEventListener("click", () => {
+      menu.addEventListener("click", () => {
         if (isActivated) {
           ul.style.display = "none";
         } else {

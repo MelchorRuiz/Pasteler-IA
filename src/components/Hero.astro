@@ -36,9 +36,13 @@ const i18n = getI18N(Astro.currentLocale);
   </div>
 </section>
 <script>
+  const header = document.querySelector("#header") as HTMLElement;
   const svg = document.querySelector("#down-arrow") as SVGSVGElement;
   const cakes = document.querySelector("#cakes") as HTMLElement;
+
+  const headerHeight = header.offsetHeight;
+
   svg.addEventListener("click", () => {
-    window.scrollTo({ top: cakes.offsetTop, behavior: "smooth" });
+    window.scrollTo({ top: cakes.offsetTop - headerHeight, behavior: "smooth" });
   });
 </script>
