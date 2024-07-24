@@ -12,5 +12,13 @@
   "home": {
     "highlights": "Gâteaux en Vedette",
     "see_more": "Voir plus"
+  },
+  "your_perfect_cake": {
+    "title": "Découvrez Votre Gâteau Parfait avec Notre IA Personnalisée",
+    "description": [
+      "Vous ne savez pas quel gâteau choisir ? Laissez notre intelligence artificielle avancée faire le travail pour vous.",
+      "Essayez-le maintenant et soyez émerveillé par la magie de Pasteler-IA !"
+    ],
+    "start": "Commencer"
   }
 }

@@ -12,5 +12,13 @@
   "home": {
     "highlights": "Featured Cakes",
     "see_more": "See more"
+  },
+  "your_perfect_cake": {
+    "title": "Discover Your Perfect Cake with Our Custom AI",
+    "description": [
+      "Not sure which cake to choose? Let our advanced Artificial Intelligence do the work for you.",
+      "Try it now and be amazed by the magic of Pasteler-IA!"
+    ],
+    "start": "Start"
   }
 }

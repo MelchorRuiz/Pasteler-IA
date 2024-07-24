@@ -12,5 +12,13 @@
   "home": {
     "highlights": "Pasteles Destacados",
     "see_more": "Ver más"
+  },
+  "your_perfect_cake": {
+    "title": "Descubre Tu Pastel Perfecto con Nuestra IA Personalizada",
+    "description": [
+      "¿No sabes qué pastel elegir? Deja que nuestra avanzada Inteligencia Artificial haga el trabajo por ti.",
+      "¡Pruébalo ahora y déjate sorprender por la magia de Pasteler-IA!"
+    ],
+    "start": "Comenzar"
   }
 }
