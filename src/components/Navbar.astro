@@ -4,7 +4,6 @@ const i18n = getI18N(Astro.currentLocale);
 const paths = getPaths(Astro.currentLocale);
 
 const links = [
-  { href: paths.home, text: i18n.menu.home },
   { href: paths.recommendations, text: i18n.menu.recommendations },
   { href: paths.catalog, text: i18n.menu.catalog },
 ];
@@ -14,10 +13,10 @@ const links = [
   id="header"
   class="fixed top-0 w-screen flex justify-between px-5 lg:px-10 py-4 items-center text-white z-30"
 >
-  <div class="flex gap-1 items-center">
+  <a class="flex gap-1 items-center" href={paths.home}>
     <img src="/favicon.svg" alt="favicon" class="w-8 h-8 lg:w-10 lg:h-10" />
     <p class="text-lg lg:text-2xl uppercase">Pasteler-IA</p>
-  </div>
+  </a>
   <div id="menu" class="cursor-pointer lg:hidden">
     <svg
       xmlns="http://www.w3.org/2000/svg"

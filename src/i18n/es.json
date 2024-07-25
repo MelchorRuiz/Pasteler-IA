@@ -2,7 +2,6 @@
   "title": "Bienvenido a nuestra tienda",
   "description": "Bienvenidos a Pasteler-IA: donde la innovación se encuentra con la tradición. Nuestros maestros pasteleros, junto con la inteligencia artificial, crean delicias personalizadas que deleitarán tu paladar. ¡Explora nuestras opciones y encuentra el postre perfecto para cualquier ocasión!",
   "menu": {
-    "home": "Inicio",
     "catalog": "Catálogo",
     "recommendations": "Recomendaciones",
     "about_us": "Nosotros",

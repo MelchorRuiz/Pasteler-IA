@@ -2,7 +2,6 @@
   "title": "Welcome to our store",
   "description": "Welcome to Pasteler-IA: where innovation meets tradition. Our master pastry chefs, together with artificial intelligence, create customized delicacies that will delight your palate. Explore our options and find the perfect dessert for any occasion!",
   "menu": {
-    "home": "Home",
     "catalog": "Catalog",
     "recommendations": "Recommendations",
     "about_us": "About us",

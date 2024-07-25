@@ -2,7 +2,6 @@
   "title": "Bienvenue à notre site",
   "description": "Bienvenue chez Pasteler-IA, où l'innovation rencontre la tradition. Nos maîtres pâtissiers, associés à l'intelligence artificielle, créent des délices personnalisés qui raviront votre palais. Explorez nos options et trouvez le dessert idéal pour chaque occasion !",
   "menu": {
-    "home": "Accueil",
     "catalog": "Catalogue",
     "recommendations": "Recommandations",
     "about_us": "Sur Nous",
