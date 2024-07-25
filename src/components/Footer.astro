@@ -1,0 +1,13 @@
+---
+import { getI18N } from "../i18n";
+const i18n = getI18N(Astro.currentLocale);
+---
+<footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
+  <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <span class="hover:underline">PASTELER-IA</span>. {i18n.footer.all_rights_reserved}.
+  </span>
+  <span class="flex mt-3 text-sm font-medium text-gray-500 sm:mt-0">
+    {i18n.footer.example_page}
+  </span>
+  </div>
+</footer>
