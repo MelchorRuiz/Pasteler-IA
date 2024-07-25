@@ -20,5 +20,31 @@
       "Try it now and be amazed by the magic of Pasteler-IA!"
     ],
     "start": "Start"
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "description": "Discover what our customers have to say about us",
+    "list": [
+      {
+        "name": "Maria G.",
+        "location": "León, Guanajuato",
+        "comment": "Pasteler-IA has pleasantly surprised me. I always had difficulties choosing the perfect cake for my children's parties, but with their recommendation system, I found just what I needed. The Mil Hojas cake was a total success! I will definitely use this service again."
+      },
+      {
+        "name": "Carlos M.",
+        "location": "Guadalajara, Jalisco",
+        "comment": "I never thought that technology and pastry could be combined in such a delicious way. I used Pasteler-IA's AI to choose an anniversary cake and the result was incredible. The customization was precise and the flavor, simply spectacular. I recommend it 100%!"
+      },
+      {
+        "name": "Laura R.",
+        "location": "CDMX",
+        "comment": "I am a dessert lover and I always look for something new. Thanks to Pasteler-IA's personalized recommendation, I discovered flavors that I would never have tried on my own. The Salón cake was a revelation. In addition, the shopping experience was quick and easy."
+      },
+      {
+        "name": "Javier T.",
+        "location": "León, Guanajuato",
+        "comment": "Organizing a surprise party for my wife was quite a challenge, but Pasteler-IA made it much easier. The AI recommended a 4 chocolates cake that left all the guests impressed. The combination of flavors was perfect and the presentation, impeccable. I will definitely use it again!"
+      }
+    ]
   }
 }

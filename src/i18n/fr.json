@@ -20,5 +20,31 @@
       "Essayez-le maintenant et soyez émerveillé par la magie de Pasteler-IA !"
     ],
     "start": "Commencer"
+  },
+  "testimonials": {
+    "title": "Témoignages",
+    "description": "Découvrez ce que nos clients ont à dire sur nous",
+    "list": [
+      {
+        "name": "María G.",
+        "location": "León, Guanajuato",
+        "comment": "Pasteler-IA m'a agréablement surpris. J'avais toujours des difficultés à choisir le gâteau parfait pour les fêtes de mes enfants, mais avec leur système de recommandation, j'ai trouvé exactement ce dont j'avais besoin. Le gâteau Mil Hojas a été un succès total ! Je vais certainement utiliser ce service à nouveau."
+      },
+      {
+        "name": "Carlos M.",
+        "location": "Guadalajara, Jalisco",
+        "comment": "Je n'aurais jamais pensé que la technologie et la pâtisserie pourraient être combinées de manière aussi délicieuse. J'ai utilisé l'IA de Pasteler-IA pour choisir un gâteau d'anniversaire et le résultat était incroyable. La personnalisation était précise et la saveur, simplement spectaculaire. Je le recommande à 100 % !"
+      },
+      {
+        "name": "Laura R.",
+        "location": "CDMX",
+        "comment": "Je suis une amoureuse des desserts et je cherche toujours quelque chose de nouveau. Grâce à la recommandation personnalisée de Pasteler-IA, j'ai découvert des saveurs que je n'aurais jamais essayées seule. Le gâteau Salón a été une révélation. De plus, l'expérience d'achat a été rapide et facile."
+      },
+      {
+        "name": "Javier T.",
+        "location": "León, Guanajuato",
+        "comment": "Organiser une fête surprise pour ma femme était tout un défi, mais Pasteler-IA l'a rendu beaucoup plus facile. L'IA a recommandé un gâteau 4 chocolats qui a impressionné tous les invités. La combinaison des saveurs était parfaite et la présentation, impeccable. Je vais certainement l'utiliser à nouveau !"
+      }
+    ]
   }
 }

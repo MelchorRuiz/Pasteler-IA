@@ -20,5 +20,31 @@
       "¡Pruébalo ahora y déjate sorprender por la magia de Pasteler-IA!"
     ],
     "start": "Comenzar"
+  },
+  "testimonials": {
+    "title": "Testimonios",
+    "description": "Descubre lo que nuestros clientes tienen que decir sobre nosotros",
+    "list": [
+      {
+        "name": "María G.",
+        "location": "León, Guanajuato",
+        "comment": "Pasteler-IA me ha sorprendido gratamente. Siempre tenía dificultades para elegir el pastel perfecto para las fiestas de mis hijos, pero con su sistema de recomendaciones, encontré justo lo que necesitaba. ¡El pastel Mil Hojas fue un éxito total! Sin duda, volveré a usar este servicio."
+      },
+      {
+        "name": "Carlos M.",
+        "location": "Guadalajara, Jalisco",
+        "comment": "Nunca pensé que la tecnología y la pastelería pudieran combinarse de una manera tan deliciosa. Utilicé la IA de Pasteler-IA para elegir un pastel de aniversario y el resultado fue increíble. La personalización fue precisa y el sabor, simplemente espectacular. ¡Lo recomiendo al 100%!"
+      },
+      {
+        "name": "Laura R.",
+        "location": "CDMX",
+        "comment": "Soy amante de los postres y siempre busco algo nuevo. Gracias a la recomendación personalizada de Pasteler-IA, descubrí sabores que nunca habría probado por mí misma. El pastel salón fue una revelación. Además, la experiencia de compra fue rápida y sencilla."
+      },
+      {
+        "name": "Javier T.",
+        "location": "León, Guanajuato",
+        "comment": "Organizar una fiesta sorpresa para mi esposa fue todo un desafío, pero Pasteler-IA lo hizo mucho más fácil. La IA recomendó un pastel 4 chocolates que dejó a todos los invitados impresionados. La combinación de sabores era perfecta y la presentación, impecable. ¡Definitivamente lo usaré de nuevo!"
+      }
+    ]
   }
 }

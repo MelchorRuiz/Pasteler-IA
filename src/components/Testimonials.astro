@@ -1,0 +1,171 @@
+---
+import { getI18N } from "../i18n";
+const i18n = getI18N(Astro.currentLocale);
+---
+
+<section class="text-white mx-5 md:mx-14">
+  <h2
+    class="text-center lg:text-left text-white text-3xl md:text-4xl lg:text-5xl pt-5"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="size-12 inline"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+      ></path>
+    </svg>
+    {i18n.testimonials.title}
+  </h2>
+  <p class="text-lg md:text-xl lg:text-2xl text-yellow-400">
+    {i18n.testimonials.description}
+  </p>
+  <ul
+    class="grid grid-cols-1 lg:grid-cols-3 gap-6 mx-auto pt-10"
+  >
+    <li
+      class="bg-gray-200/20 p-5 rounded-2xl lg:col-span-2 hover:scale-[1.02] transition-all"
+    >
+      <blockquote class="flex flex-col justify-between h-full">
+        <div class="flex gap-6 h-full">
+          <div class="flex flex-col justify-between">
+            <p>{i18n.testimonials.list[0].comment}</p>
+            <div>
+              <cite class="text-sm">{i18n.testimonials.list[0].name}</cite>
+              <p class="text-sm flex items-center pt-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 inline"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                  ></path>
+                </svg>
+                {i18n.testimonials.list[0].location}
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <img src="/testimonial-1.webp" alt="testimonial 1" class="rounded-full">
+          </div>
+        </div>
+      </blockquote>
+    </li>
+    <li
+      class="bg-gray-200/20 p-5 rounded-2xl hover:scale-[1.02] transition-all"
+    >
+      <blockquote class="flex flex-col justify-between h-full">
+        <p>{i18n.testimonials.list[0].comment}</p>
+        <div>
+          <cite class="text-sm">{i18n.testimonials.list[0].name}</cite>
+          <p class="text-sm flex items-center pt-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6 inline"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+              ></path>
+            </svg>
+            {i18n.testimonials.list[0].location}
+          </p>
+        </div>
+      </blockquote>
+    </li>
+    <li
+      class="bg-gray-200/20 p-5 rounded-2xl hover:scale-[1.02] transition-all"
+    >
+      <blockquote class="flex flex-col justify-between h-full">
+        <p>{i18n.testimonials.list[0].comment}</p>
+        <div>
+          <cite class="text-sm">{i18n.testimonials.list[0].name}</cite>
+          <p class="text-sm flex items-center pt-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6 inline"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+              ></path>
+            </svg>
+            {i18n.testimonials.list[0].location}
+          </p>
+        </div>
+      </blockquote>
+    </li>
+    <li
+      class="bg-gray-200/20 p-5 rounded-2xl lg:col-span-2 hover:scale-[1.02] transition-all"
+    >
+      <blockquote class="flex flex-col justify-between h-full">
+        <div class="flex gap-6 h-full">
+          <div class="flex flex-col justify-between">
+            <p>{i18n.testimonials.list[0].comment}</p>
+            <div>
+              <cite class="text-sm">{i18n.testimonials.list[0].name}</cite>
+              <p class="text-sm flex items-center pt-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 inline"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                  ></path>
+                </svg>
+                {i18n.testimonials.list[0].location}
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <img src="/testimonial-2.webp" alt="testimonial 1" class="rounded-full">
+          </div>
+        </div>
+      </blockquote>
+    </li>
+  </ul>
+</section>
