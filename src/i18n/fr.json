@@ -47,6 +47,10 @@
       }
     ]
   },
+  "catalog": {
+    "title": "Notre Catalogue",
+    "description": "Explorez notre sélection de gâteaux et trouvez le dessert parfait pour chaque occasion"
+  },
   "footer": {
     "all_rights_reserved": "Tous droits réservés",
     "example_page": "Ceci est une page d'exemple ; les informations présentées sont fictives."

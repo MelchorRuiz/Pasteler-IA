@@ -47,6 +47,10 @@
       }
     ]
   },
+  "catalog": {
+    "title": "Our Catalog",
+    "description": "Explore our selection of cakes and find the perfect dessert for any occasion"
+  },
   "footer": {
     "all_rights_reserved": "All rights reserved",
     "example_page": "This is an example page; the information presented is fictitious."

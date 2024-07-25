@@ -9,7 +9,13 @@ const cakes = database.collection('cakes');
 export const GET: APIRoute = async ({ request }) => {
   const url = new URL(request.url);
   const page = parseInt(url.searchParams.get('page') || '1', 10);
-  const limit = 10;
+  if (page < 1) {
+    return new Response(JSON.stringify({ message: 'Invalid page number' }),
+      { headers: { "content-type": "application/json" }, status: 400 }
+    );
+  }
+
+  const limit = 12;
   const skip = (page - 1) * limit;
 
   const totalItems = await cakes.countDocuments();
