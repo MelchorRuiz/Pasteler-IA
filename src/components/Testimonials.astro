@@ -23,47 +23,47 @@ const i18n = getI18N(Astro.currentLocale);
     </svg>
     {i18n.testimonials.title}
   </h2>
-  <p class="text-lg md:text-xl lg:text-2xl text-yellow-400">
+  <p class="text-lg md:text-xl lg:text-2xl text-yellow-400 text-center lg:text-left">
     {i18n.testimonials.description}
   </p>
-  <ul
-    class="grid grid-cols-1 lg:grid-cols-3 gap-6 mx-auto pt-10"
-  >
+  <ul class="grid grid-cols-1 lg:grid-cols-3 gap-6 mx-auto pt-10">
     <li
       class="bg-gray-200/20 p-5 rounded-2xl lg:col-span-2 hover:scale-[1.02] transition-all"
     >
-      <blockquote class="flex flex-col justify-between h-full">
-        <div class="flex gap-6 h-full">
-          <div class="flex flex-col justify-between">
-            <p>{i18n.testimonials.list[0].comment}</p>
-            <div>
-              <cite class="text-sm">{i18n.testimonials.list[0].name}</cite>
-              <p class="text-sm flex items-center pt-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-6 inline"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                  ></path>
-                </svg>
-                {i18n.testimonials.list[0].location}
-              </p>
-            </div>
+      <blockquote class="flex gap-6 h-full">
+        <div class="flex flex-col justify-between">
+          <p>{i18n.testimonials.list[0].comment}</p>
+          <div class="pt-4">
+            <cite class="text-sm">{i18n.testimonials.list[0].name}</cite>
+            <p class="text-sm flex items-center pt-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 inline"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                ></path>
+              </svg>
+              {i18n.testimonials.list[0].location}
+            </p>
           </div>
-          <div class="flex items-center">
-            <img src="/testimonial-1.webp" alt="testimonial 1" class="rounded-full">
-          </div>
+        </div>
+        <div class="items-center hidden lg:flex">
+          <img
+            src="/testimonial-1.webp"
+            alt="testimonial 1"
+            class="rounded-full"
+          />
         </div>
       </blockquote>
     </li>
@@ -71,9 +71,9 @@ const i18n = getI18N(Astro.currentLocale);
       class="bg-gray-200/20 p-5 rounded-2xl hover:scale-[1.02] transition-all"
     >
       <blockquote class="flex flex-col justify-between h-full">
-        <p>{i18n.testimonials.list[0].comment}</p>
-        <div>
-          <cite class="text-sm">{i18n.testimonials.list[0].name}</cite>
+        <p>{i18n.testimonials.list[1].comment}</p>
+        <div class="pt-4">
+          <cite class="text-sm">{i18n.testimonials.list[1].name}</cite>
           <p class="text-sm flex items-center pt-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +93,7 @@ const i18n = getI18N(Astro.currentLocale);
                 d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
               ></path>
             </svg>
-            {i18n.testimonials.list[0].location}
+            {i18n.testimonials.list[1].location}
           </p>
         </div>
       </blockquote>
@@ -102,9 +102,9 @@ const i18n = getI18N(Astro.currentLocale);
       class="bg-gray-200/20 p-5 rounded-2xl hover:scale-[1.02] transition-all"
     >
       <blockquote class="flex flex-col justify-between h-full">
-        <p>{i18n.testimonials.list[0].comment}</p>
-        <div>
-          <cite class="text-sm">{i18n.testimonials.list[0].name}</cite>
+        <p>{i18n.testimonials.list[2].comment}</p>
+        <div class="pt-4">
+          <cite class="text-sm">{i18n.testimonials.list[2].name}</cite>
           <p class="text-sm flex items-center pt-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +124,7 @@ const i18n = getI18N(Astro.currentLocale);
                 d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
               ></path>
             </svg>
-            {i18n.testimonials.list[0].location}
+            {i18n.testimonials.list[2].location}
           </p>
         </div>
       </blockquote>
@@ -132,38 +132,40 @@ const i18n = getI18N(Astro.currentLocale);
     <li
       class="bg-gray-200/20 p-5 rounded-2xl lg:col-span-2 hover:scale-[1.02] transition-all"
     >
-      <blockquote class="flex flex-col justify-between h-full">
-        <div class="flex gap-6 h-full">
-          <div class="flex flex-col justify-between">
-            <p>{i18n.testimonials.list[0].comment}</p>
-            <div>
-              <cite class="text-sm">{i18n.testimonials.list[0].name}</cite>
-              <p class="text-sm flex items-center pt-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-6 inline"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                  ></path>
-                </svg>
-                {i18n.testimonials.list[0].location}
-              </p>
-            </div>
+      <blockquote class="flex gap-6 h-full">
+        <div class="flex flex-col justify-between">
+          <p>{i18n.testimonials.list[3].comment}</p>
+          <div class="pt-4">
+            <cite class="text-sm">{i18n.testimonials.list[3].name}</cite>
+            <p class="text-sm flex items-center pt-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 inline"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                ></path>
+              </svg>
+              {i18n.testimonials.list[3].location}
+            </p>
           </div>
-          <div class="flex items-center">
-            <img src="/testimonial-2.webp" alt="testimonial 1" class="rounded-full">
-          </div>
+        </div>
+        <div class="items-center hidden lg:flex">
+          <img
+            src="/testimonial-2.webp"
+            alt="testimonial 1"
+            class="rounded-full"
+          />
         </div>
       </blockquote>
     </li>
