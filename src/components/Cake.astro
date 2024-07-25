@@ -4,6 +4,7 @@ interface Props {
   quantity?: string;
   description?: string;
   imageUrl?: string;
+  href?: string;
 }
 
 const {
@@ -11,12 +12,13 @@ const {
   quantity = "100 gr",
   description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsam corrupti commodi. Doloremque ullam cum odit architecto, officiis sint nulla unde, vitae fugiat accusantium voluptas laborum sit, dolorum qui nam.",
   imageUrl = "http://placehold.it/400x300",
+  href,
 }: Props = Astro.props;
 ---
 
 <a
   class="cake-card relative block h-auto rounded-3xl overflow-hidden group cursor-pointer"
-  href="/cake/"
+  href={href}
 >
   <img class="h-full w-full" src={imageUrl} alt={name} />
   <div

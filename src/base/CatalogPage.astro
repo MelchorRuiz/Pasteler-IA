@@ -1,10 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Cake from '../components/Cake.astro';
-import { getI18N } from '../i18n';
+import { getI18N, getPaths } from '../i18n';
 const i18n = getI18N(Astro.currentLocale);
+const paths = getPaths(Astro.currentLocale);
 
 interface CakeData {
+  id: string;
   name: string;
   quantity: string;
   description: string;
@@ -36,6 +38,7 @@ if (response.status === 200) {
           quantity={cake.quantity}
           description={cake.description}
           imageUrl={cake.img}
+          href={`${paths.catalog}/${cake.id}`}
         />
       ))}
     </div>
