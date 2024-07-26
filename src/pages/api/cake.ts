@@ -1,18 +1,37 @@
 import type { APIRoute } from "astro";
-import { MongoClient } from 'mongodb';
+import { MongoClient, ObjectId } from 'mongodb';
 
 const uri = import.meta.env.MONGODB_URI;
 const client = new MongoClient(uri);
 const database = client.db('pasteler-ia');
 const cakes = database.collection('cakes');
 
-export const GET: APIRoute = async ({ request }) => {
-  const url = new URL(request.url);
-  const page = parseInt(url.searchParams.get('page') || '1', 10);
+class ApiError extends Error {
+  code: number;
+
+  constructor(message: string, code: number) {
+    super(message);
+    this.code = code;
+    this.name = "ApiError";
+  }
+}
+
+const getOneCake = async (id: string) => {
+  if (!ObjectId.isValid(id)) {
+    throw new ApiError('Invalid ID format', 400);
+  }
+  const cake = await cakes.findOne({ _id: new ObjectId(id) });
+  if (!cake) {
+    throw new ApiError('Cake not found', 404);
+  }
+
+  const { _id, ...rest } = cake;
+  return { id: _id, ...rest };
+}
+
+const getAllCakes = async (page: number) => {
   if (page < 1) {
-    return new Response(JSON.stringify({ message: 'Invalid page number' }),
-      { headers: { "content-type": "application/json" }, status: 400 }
-    );
+    throw new ApiError('Invalid page number', 400);
   }
 
   const limit = 12;
@@ -27,22 +46,46 @@ export const GET: APIRoute = async ({ request }) => {
   });
 
   if (results.length === 0) {
-    return new Response(JSON.stringify({ message: 'No cakes found' }),
-      { headers: { "content-type": "application/json" }, status: 404 }
-    );
+    throw new ApiError('No cakes found', 404);
   }
 
-  const response = {
+  return {
     data: results,
     totalItems,
     totalPages,
     currentPage: page,
     itemsPerPage: limit,
   };
+}
 
-  return new Response(JSON.stringify(response),
-    { headers: { "content-type": "application/json" }, status: 200 }
-  );
+export const GET: APIRoute = async ({ request }) => {
+  try {
+
+    const url = new URL(request.url);
+    const id = url.searchParams.get('id');
+    const page = parseInt(url.searchParams.get('page') || '1', 10);
+
+    if (id) {
+      return new Response(JSON.stringify(await getOneCake(id)),
+        { headers: { "content-type": "application/json" }, status: 200 }
+      );
+    }
+
+    return new Response(JSON.stringify(await getAllCakes(page)),
+      { headers: { "content-type": "application/json" }, status: 200 }
+    );
+
+  } catch (error) {
+    if (error instanceof ApiError) {
+      return new Response(JSON.stringify({ error: error.message }),
+        { headers: { "content-type": "application/json" }, status: error.code }
+      );
+    }
+
+    return new Response(JSON.stringify({ error: 'Internal server error' }),
+      { headers: { "content-type": "application/json" }, status: 500 }
+    );
+  }
 }
 
 export const POST: APIRoute = async ({ request }) => {

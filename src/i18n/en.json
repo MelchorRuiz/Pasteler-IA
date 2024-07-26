@@ -48,7 +48,9 @@
   },
   "catalog": {
     "title": "Our Catalog",
-    "description": "Explore our selection of cakes and find the perfect dessert for any occasion"
+    "description": "Explore our selection of cakes and find the perfect dessert for any occasion",
+    "buy": "Buy",
+    "add_to_cart": "Add to cart"
   },
   "footer": {
     "all_rights_reserved": "All rights reserved",

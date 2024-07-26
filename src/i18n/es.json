@@ -48,7 +48,9 @@
   },
   "catalog": {
     "title": "Nuestro Catálogo",
-    "description": "Explora nuestra selección de pasteles y encuentra el postre perfecto para cualquier ocasión"
+    "description": "Explora nuestra selección de pasteles y encuentra el postre perfecto para cualquier ocasión",
+    "buy": "Comprar",
+    "add_to_cart": "Agregar al carrito"
   },
   "footer": {
     "all_rights_reserved": "Todos los derechos reservados",
