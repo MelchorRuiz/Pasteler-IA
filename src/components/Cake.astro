@@ -1,28 +1,28 @@
 ---
 interface Props {
   id?: string;
-  name?: string;
-  quantity?: string;
-  description?: string;
-  imageUrl?: string;
-  href?: string;
+  name: string;
+  quantity: string;
+  description: string;
+  imageUrl: string;
+  href: string;
 }
 
 const {
-  id = "",
-  name = "Cake",
-  quantity = "100 gr",
-  description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsam corrupti commodi. Doloremque ullam cum odit architecto, officiis sint nulla unde, vitae fugiat accusantium voluptas laborum sit, dolorum qui nam.",
-  imageUrl = "http://placehold.it/400x300",
+  id,
+  name,
+  quantity,
+  description,
+  imageUrl,
   href,
 }: Props = Astro.props;
 ---
 
 <a
-  class="cake-card relative block h-auto rounded-3xl overflow-hidden group cursor-pointer"
+  class="relative block h-auto rounded-3xl overflow-hidden group cursor-pointer"
   href={href}
 >
-  <img class="h-full w-full" src={imageUrl} alt={name} transition:name={id} />
+  <img class="h-full w-full" src={imageUrl} alt={name} transition:name={id ? id : undefined} />
   <div
     class="absolute bottom-0 left-0 right-0 rounded-3xl bg-gray-500 translate-y-full transition ease-in-out duration-200 group-hover:translate-y-0"
   >
