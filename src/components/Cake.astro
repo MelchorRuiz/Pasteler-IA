@@ -1,5 +1,6 @@
 ---
 interface Props {
+  id?: string;
   name?: string;
   quantity?: string;
   description?: string;
@@ -8,6 +9,7 @@ interface Props {
 }
 
 const {
+  id = "",
   name = "Cake",
   quantity = "100 gr",
   description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsam corrupti commodi. Doloremque ullam cum odit architecto, officiis sint nulla unde, vitae fugiat accusantium voluptas laborum sit, dolorum qui nam.",
@@ -20,7 +22,7 @@ const {
   class="cake-card relative block h-auto rounded-3xl overflow-hidden group cursor-pointer"
   href={href}
 >
-  <img class="h-full w-full" src={imageUrl} alt={name} />
+  <img class="h-full w-full" src={imageUrl} alt={name} transition:name={id} />
   <div
     class="absolute bottom-0 left-0 right-0 rounded-3xl bg-gray-500 translate-y-full transition ease-in-out duration-200 group-hover:translate-y-0"
   >

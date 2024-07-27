@@ -34,6 +34,7 @@ if (response.status === 200) {
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
       {cakes.map(cake => (
         <Cake
+          id={cake.id}
           name={cake.name}
           quantity={cake.quantity}
           description={cake.description}
