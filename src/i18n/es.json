@@ -7,7 +7,8 @@
     "about_us": "Nosotros",
     "contact": "Contacto",
     "blog": "Blog",
-    "login": "Iniciar sesión"
+    "login": "Iniciar sesión",
+    "my_account": "Mi cuenta"
   },
   "home": {
     "highlights": "Pasteles Destacados",
@@ -60,6 +61,14 @@
     "subtitle": "¡Bienvenido! Por favor, inicia sesión en tu cuenta. Si no tienes una, regístrate ahora.",
     "username": "Nombre de usuario",
     "password": "Contraseña"
+  },
+  "my_account": {
+    "title": "Mi Cuenta",
+    "subtitle": [
+      "¡Hola,",
+      "! Aquí puedes ver tus pedidos, actualizar tu información personal y mucho más."
+    ],
+    "logout": "Cerrar sesión"
   },
   "footer": {
     "all_rights_reserved": "Todos los derechos reservados",

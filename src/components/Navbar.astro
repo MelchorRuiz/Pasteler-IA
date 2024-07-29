@@ -3,10 +3,12 @@ import { getI18N, getPaths } from "../i18n";
 const i18n = getI18N(Astro.currentLocale);
 const paths = getPaths(Astro.currentLocale);
 
+const user = Astro.locals.user
+
 const menu = [
   { text: i18n.menu.recommendations, href: paths.recommendations },
   { text: i18n.menu.catalog, href: paths.catalog },
-  { text: i18n.menu.login , href: paths.login },
+  { text: user ? i18n.menu.my_account : i18n.menu.login , href: user ? paths.my_account : paths.login },
 ];
 ---
 

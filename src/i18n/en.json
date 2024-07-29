@@ -7,7 +7,8 @@
     "about_us": "About us",
     "contact": "Contact",
     "blog": "Blog",
-    "login": "Login"
+    "login": "Login",
+    "my_account": "My account"
   },
   "home": {
     "highlights": "Featured Cakes",
@@ -60,6 +61,14 @@
     "subtitle": "Welcome! Please log in to your account. If you don't have one, sign up now.",
     "username": "Username",
     "password": "Password"
+  },
+  "my_account": {
+    "title": "My Account",
+    "subtitle": [
+      "Welcome,",
+      "!Here you can manage your personal information, view your purchase history, and much more." 
+    ],
+    "logout": "Log out"
   },
   "footer": {
     "all_rights_reserved": "All rights reserved",

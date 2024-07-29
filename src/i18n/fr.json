@@ -7,7 +7,8 @@
     "about_us": "Sur Nous",
     "contact": "Contact",
     "blog": "Blog",
-    "login": "Connexion"
+    "login": "Connexion",
+    "my_account": "Mon compte"
   },
   "home": {
     "highlights": "Gâteaux en Vedette",
@@ -60,6 +61,14 @@
     "subtitle": "Bienvenue ! Veuillez vous connecter à votre compte. Si vous n'en avez pas, inscrivez-vous maintenant.",
     "username": "Nom d'utilisateur",
     "password": "Mot de passe"
+  },
+  "my_account": {
+    "title": "Mon Compte",
+    "subtitle": [
+      "Bienvenue,",
+      "Ici, vous pouvez gérer vos informations personnelles, vos commandes et vos préférences de compte."
+    ],
+    "logout": "Se déconnecter"
   },
   "footer": {
     "all_rights_reserved": "Tous droits réservés",

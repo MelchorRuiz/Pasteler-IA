@@ -16,6 +16,7 @@ const PATHS_IN_SPANISH = {
 	contact: '/contacto',
 	blog: '/blog',
 	login: '/inicio-sesion',
+	my_account: '/mi-cuenta',
 };
 
 const PATHS_IN_ENGLISH = {
@@ -26,6 +27,7 @@ const PATHS_IN_ENGLISH = {
 	contact: '/en/contact',
 	blog: '/en/blog',
 	login: '/en/login',
+	my_account: '/en/my-account',
 };
 
 const PATHS_IN_FRENCH = {
@@ -36,6 +38,7 @@ const PATHS_IN_FRENCH = {
 	contact: '/fr/contact',
 	blog: '/fr/blog',
 	login: '/fr/connexion',
+	my_account: '/fr/mon-compte',
 };
 
 export const getI18N = (currentLocale : string = 'es') => {
