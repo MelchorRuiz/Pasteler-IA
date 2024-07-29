@@ -8,7 +8,8 @@ import type { APIContext } from "astro";
 interface UserDoc {
 	_id: string;
   username: string;
-  password_hash: string;
+  github_id?: string;
+  password_hash?: string;
 }
 
 const uri = import.meta.env.MONGODB_URI;

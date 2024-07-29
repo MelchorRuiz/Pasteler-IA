@@ -1,11 +1,13 @@
 import { Lucia } from "lucia";
 import { MongodbAdapter } from "@lucia-auth/adapter-mongodb";
 import { Collection, MongoClient } from "mongodb";
+import { GitHub } from "arctic";
 
 interface UserDoc {
 	_id: string;
   username: string;
-  password_hash: string;
+	github_id?: string;
+  password_hash?: string;
 }
 
 interface SessionDoc {
@@ -16,7 +18,7 @@ interface SessionDoc {
 
 interface DatabaseUserAttributes {
 	username: string;
-  password_hash: string;
+	github_id?: string;
 }
 
 const uri = import.meta.env.MONGODB_URI;
@@ -37,10 +39,16 @@ export const lucia = new Lucia(adapter, {
 	},
   getUserAttributes: (attributes) => {
 		return {
+			githubId: attributes.github_id,
 			username: attributes.username
 		};
 	}
 });
+
+export const github = new GitHub(
+	import.meta.env.GITHUB_CLIENT_ID,
+	import.meta.env.GITHUB_CLIENT_SECRET
+);
 
 declare module "lucia" {
 	interface Register {
