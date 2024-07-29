@@ -55,7 +55,11 @@
   },
   "login": {
     "title": "Connectez-vous ou créez un compte",
-    "subtitle": "Bienvenue ! Veuillez vous connecter à votre compte. Si vous n'en avez pas, inscrivez-vous maintenant."
+    "signin": "Se connecter",
+    "signup": "S'inscrire",
+    "subtitle": "Bienvenue ! Veuillez vous connecter à votre compte. Si vous n'en avez pas, inscrivez-vous maintenant.",
+    "username": "Nom d'utilisateur",
+    "password": "Mot de passe"
   },
   "footer": {
     "all_rights_reserved": "Tous droits réservés",

@@ -11,6 +11,34 @@ const paths = getPaths(Astro.currentLocale);
       <h1 class="text-2xl md:text-4xl lg:text-6xl">{i18n.login.title}</h1>
       <p class="text-sm lg:text-base text-yellow-400 pt-3">{i18n.login.subtitle}</p>
     </div>
-    
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-20">
+      <div>
+        <form class="flex flex-col gap-4">
+          <div class="flex flex-col gap-2">
+            <span>{i18n.login.username}</span>
+            <input class="p-2 bg-white/60 text-black" type="text">
+          </div>
+          <div class="flex flex-col gap-2">
+            <span>{i18n.login.password}</span>
+            <input class="p-2 bg-white/60 text-black" type="password">
+          </div>
+          <button class="bg-orange-200/40 py-2 text-xl mt-3" type="submit">{i18n.login.signin}</button>
+        </form>
+      </div>
+      <div>
+        <form class="flex flex-col gap-4">
+          <div class="flex flex-col gap-2">
+            <span>{i18n.login.username}</span>
+            <input class="p-2 bg-white/60 text-black" type="text">
+          </div>
+          <div class="flex flex-col gap-2">
+            <span>{i18n.login.password}</span>
+            <input class="p-2 bg-white/60 text-black" type="password">
+          </div>
+          <button class="bg-orange-200/40 py-2 text-xl mt-3" type="submit">{i18n.login.signup}</button>
+        </form>
+      </div>
+      <div class="lg:col-span-2"></div>
+    </div>
   </main>
 </Layout>

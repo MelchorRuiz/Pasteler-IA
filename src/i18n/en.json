@@ -55,7 +55,11 @@
   },
   "login": {
     "title": "Log in or create an account",
-    "subtitle": "Welcome! Please log in to your account. If you don't have one, sign up now."
+    "signin": "Sign in",
+    "signup": "Sign up",
+    "subtitle": "Welcome! Please log in to your account. If you don't have one, sign up now.",
+    "username": "Username",
+    "password": "Password"
   },
   "footer": {
     "all_rights_reserved": "All rights reserved",
