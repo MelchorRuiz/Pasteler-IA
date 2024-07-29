@@ -1,5 +1,10 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n";
 import MyAccountPage from '../../base/MyAccountPage.astro'
+
+if (!Astro.locals.user) {
+  return Astro.redirect(getRelativeLocaleUrl(Astro.currentLocale || 'es', '/'));
+}
 ---
 
 <MyAccountPage /> 
