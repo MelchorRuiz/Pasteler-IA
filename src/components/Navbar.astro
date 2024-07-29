@@ -3,21 +3,21 @@ import { getI18N, getPaths } from "../i18n";
 const i18n = getI18N(Astro.currentLocale);
 const paths = getPaths(Astro.currentLocale);
 
-const links = [
-  { href: paths.recommendations, text: i18n.menu.recommendations },
-  { href: paths.catalog, text: i18n.menu.catalog },
+const menu = [
+  { text: i18n.menu.recommendations, href: paths.recommendations },
+  { text: i18n.menu.catalog, href: paths.catalog },
 ];
 ---
 
 <nav
   id="header"
-  class="fixed top-0 w-screen flex justify-between px-5 lg:px-10 py-4 items-center text-white z-30"
+  class="fixed top-0 w-screen flex justify-between px-5 lg:px-10 py-3 items-center bg-darkGray text-white z-30 border-b-[1px] border-white/20"
 >
   <a class="flex gap-1 items-center" href={paths.home}>
-    <img src="/favicon.svg" alt="favicon" class="w-8 h-8 lg:w-10 lg:h-10" />
-    <p class="text-lg lg:text-2xl uppercase">Pasteler-IA</p>
+    <img src="/favicon.svg" alt="favicon" class="w-auto h-8 lg:h-10" />
+    <span class="text-lg lg:text-xl font-bold">PASTELER-IA</span>
   </a>
-  <div id="menu" class="cursor-pointer lg:hidden">
+  <div id="menu" class="cursor-pointer lg:hidden text-white">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -33,14 +33,14 @@ const links = [
     </svg>
   </div>
   <ul
-    class="fixed lg:relative top-0 left-0 bottom-0 right-0 bg-darkGray/90 lg:bg-transparent flex flex-col lg:flex-row justify-center items-center gap-5 lg:text-lg z-20 h-screen lg:h-fit"
+    class="fixed lg:relative top-14 lg:top-0 left-0 bg-darkGray lg:bg-transparent flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-5 lg:text-lg z-20 w-full lg:w-fit py-5 lg:py-0 px-10 rounded-b-xl lg:rounded-b-none border-t-[1px] lg:border-none border-t-white/20"
   >
     {
-      links.map((link) => (
-        <li>
+      menu.map((link) => (
+        <li class="pl-1 lg:pl-0">
           <a
             href={link.href}
-            class="relative lg:after:w-0 lg:hover:after:w-full lg:after:h-[2px] lg:hover:after:bg-white lg:after:absolute lg:after:-bottom-2 lg:after:left-0 lg:after:rounded-lg lg:after:transition-all lg:after:duration-300 lg:after:ease-in-out"
+            class="relative lg:after:w-0 lg:hover:after:w-full lg:after:h-[1px] lg:hover:after:bg-white lg:after:absolute lg:after:-bottom-2 lg:after:left-0 lg:after:rounded-lg lg:after:transition-all lg:after:duration-300 lg:after:ease-in-out text-nowrap"
           >
             {link.text}
           </a>
@@ -67,56 +67,38 @@ const links = [
   </ul>
 </nav>
 
-<style>
-  nav {
-    animation: fadeIn 0.5s ease;
-    animation-timeline: scroll();
-    animation-range: 0 100vh;
-    background: theme("colors.darkGray");
-  }
-  @keyframes fadeIn {
-    from {
-      background-color: transparent;
-      backdrop-filter: blur(0px);
-    }
-    to {
-      background: theme("colors.darkGray");
-      backdrop-filter: blur(5px);
-    }
-  }
-</style>
+<script is:inline>
+  let menu;
+  let ul;
+  let language;
+</script>
+<script is:inline data-astro-rerun>
+  menu = document.querySelector("#menu");
+  ul = document.querySelector("nav ul");
+  language = document.querySelector("#language");
 
-<script>
-  const language = document.querySelector("#language") as HTMLSelectElement;
+  menu.addEventListener("click", () => {
+    console.log("click");
+    const isOpen = ul.style.display === "flex";
+    ul.style.display = isOpen ? "none" : "flex";
+  });
+
+  if (window.innerWidth >= 1024) {
+    ul.style.display = "flex";
+  } else {
+    ul.style.display = "none";
+  }
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 1024) {
+      ul.style.display = "flex";
+    } else {
+      ul.style.display = "none";
+    }
+  });
+
   language.addEventListener("change", () => {
     const path = language.value === "es" ? "/" : `/${language.value}`;
     window.location.href = path;
   });
-</script>
-<script>
-  const menu = document.querySelector("#menu") as HTMLElement;
-  const ul = document.querySelector("nav ul") as HTMLUListElement;
-  const isActivated = false;
-
-  const addListeners = () => {
-    if (window.innerWidth < 1024) {
-      ul.style.display = "none";
-      menu.addEventListener("click", () => {
-        if (isActivated) {
-          ul.style.display = "none";
-        } else {
-          ul.style.display = "flex";
-        }
-      });
-      ul.addEventListener("click", (e) => {
-        const target = e.target as HTMLElement;
-        if (target.tagName !== "UL") return;
-        ul.style.display = "none";
-      });
-    } else {
-      ul.style.display = "flex";
-    }
-  };
-  addListeners();
-  window.addEventListener("resize", addListeners);
 </script>
