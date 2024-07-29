@@ -6,7 +6,8 @@
     "recommendations": "Recommandations",
     "about_us": "Sur Nous",
     "contact": "Contact",
-    "blog": "Blog"
+    "blog": "Blog",
+    "login": "Connexion"
   },
   "home": {
     "highlights": "Gâteaux en Vedette",
@@ -51,6 +52,10 @@
     "description": "Explorez notre sélection de gâteaux et trouvez le dessert parfait pour chaque occasion",
     "buy": "Acheter",
     "add_to_cart": "Ajouter au panier"
+  },
+  "login": {
+    "title": "Connectez-vous ou créez un compte",
+    "subtitle": "Bienvenue ! Veuillez vous connecter à votre compte. Si vous n'en avez pas, inscrivez-vous maintenant."
   },
   "footer": {
     "all_rights_reserved": "Tous droits réservés",

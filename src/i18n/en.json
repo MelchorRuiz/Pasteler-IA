@@ -6,7 +6,8 @@
     "recommendations": "Recommendations",
     "about_us": "About us",
     "contact": "Contact",
-    "blog": "Blog"
+    "blog": "Blog",
+    "login": "Login"
   },
   "home": {
     "highlights": "Featured Cakes",
@@ -51,6 +52,10 @@
     "description": "Explore our selection of cakes and find the perfect dessert for any occasion",
     "buy": "Buy",
     "add_to_cart": "Add to cart"
+  },
+  "login": {
+    "title": "Log in or create an account",
+    "subtitle": "Welcome! Please log in to your account. If you don't have one, sign up now."
   },
   "footer": {
     "all_rights_reserved": "All rights reserved",

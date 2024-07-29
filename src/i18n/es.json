@@ -6,7 +6,8 @@
     "recommendations": "Recomendaciones",
     "about_us": "Nosotros",
     "contact": "Contacto",
-    "blog": "Blog"
+    "blog": "Blog",
+    "login": "Iniciar sesión"
   },
   "home": {
     "highlights": "Pasteles Destacados",
@@ -51,6 +52,10 @@
     "description": "Explora nuestra selección de pasteles y encuentra el postre perfecto para cualquier ocasión",
     "buy": "Comprar",
     "add_to_cart": "Agregar al carrito"
+  },
+  "login": {
+    "title": "Inicia sesión o crea una cuenta",
+    "subtitle": "¡Bienvenido! Por favor, inicia sesión en tu cuenta. Si no tienes una, regístrate ahora."
   },
   "footer": {
     "all_rights_reserved": "Todos los derechos reservados",
