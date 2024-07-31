@@ -14,7 +14,26 @@ const perplexity = createOpenAI({
 });
 
 const model = perplexity('llama-3-8b-instruct');
-let system = 'Eres un experto en pasteles y repostería y te han pedido una recomedacion de un pastel basado en los gustos de una persona. Solo puedes dar recomendaciones de 40 palabras. Solo puedes recomendar uno de los siguientes pasteles: '
+
+const getSystemPrompt = (locale: string) => {
+  if (locale === 'en') {
+    return 'You are an expert in cakes and pastries and have been asked for a recommendation of a cake based on a person\'s tastes. You can only give recommendations of 40 words. You can only recommend one of the following cakes: ';
+  }
+  if (locale === 'fr') {
+    return 'Vous êtes un expert en gâteaux et pâtisseries et on vous a demandé une recommandation de gâteau basée sur les goûts d\'une personne. Vous ne pouvez donner que des recommandations de 40 mots. Vous ne pouvez recommander qu\'un des gâteaux suivants: ';
+  }
+  return 'Eres un experto en pasteles y repostería y te han pedido una recomedacion de un pastel basado en los gustos de una persona. Solo puedes dar recomendaciones de 40 palabras. Solo puedes recomendar uno de los siguientes pasteles: ';
+}
+
+const getUserPrompt = (locale: string, description: string) => {
+  if (locale === 'en') {
+    return 'A customer has asked you for a recommendation of a cake based on their tastes. The customer wrote this about their tastes: ' + description + '.';
+  }
+  if (locale === 'fr') {
+    return 'Un client vous a demandé une recommandation de gâteau basée sur ses goûts. Le client a écrit ceci sur ses goûts: ' + description + '.';
+  }
+  return 'Un cliente te ha pedido una recomendación de un pastel basado en sus gustos. El cliente escribio esto sobre sus gustos: ' + description + '.';
+}
 
 export const POST: APIRoute = async ({ request }) => {
   const allCakes = await cakes.find().toArray();
@@ -24,15 +43,17 @@ export const POST: APIRoute = async ({ request }) => {
     );
   }
 
-  system += allCakes.map((cake) => cake.name).join(', ');
   const body = await request.json();
   const description = body.description;
+  
+  let system = getSystemPrompt(body.locale);
+  system += allCakes.map((cake) => cake.name).join(', ');
 
   const { text } = await generateText({
     model,
     maxTokens: 100,
     system,
-    prompt: 'Un cliente te ha pedido una recomendación de un pastel basado en sus gustos. El cliente escribio esto sobre sus gustos: ' + description + '.',
+    prompt: getUserPrompt(body.locale, description),
   });
 
   let cakeId = '';
