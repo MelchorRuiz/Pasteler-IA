@@ -50,7 +50,9 @@
   },
   "recommendations": {
     "title": "Our Recommendations",
-    "description": "Find your perfect cake with our AI-powered personalized recommendations"
+    "description": "Write about yourself, your tastes, and preferences, and our AI will recommend the perfect cake for you. Try it now!",
+    "send": "Send",
+    "chef_suggestion": "Chef's Suggestion"
   },
   "catalog": {
     "title": "Our Catalog",

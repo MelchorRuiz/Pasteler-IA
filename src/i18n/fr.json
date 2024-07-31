@@ -50,7 +50,9 @@
   },
   "recommendations": {
     "title": "Nos Recommandations",
-    "description": "Trouvez votre gâteau parfait avec nos recommandations personnalisées alimentées par l'IA"
+    "description": "Parlez de vous, de vos goûts et de vos préférences, et notre IA vous recommandera le gâteau parfait pour vous. Essayez-le maintenant !",
+    "send": "Envoyer",
+    "chef_suggestion": "Suggestion du Chef"
   },
   "catalog": {
     "title": "Notre Catalogue",
