@@ -48,6 +48,10 @@
       }
     ]
   },
+  "recommendations": {
+    "title": "Our Recommendations",
+    "description": "Find your perfect cake with our AI-powered personalized recommendations"
+  },
   "catalog": {
     "title": "Our Catalog",
     "description": "Explore our selection of cakes and find the perfect dessert for any occasion",

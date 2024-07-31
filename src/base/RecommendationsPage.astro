@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Cake from '../components/Cake.astro';
+import { getI18N, getPaths } from '../i18n';
+const i18n = getI18N(Astro.currentLocale);
+const paths = getPaths(Astro.currentLocale);
+---
+
+<Layout title="Pasteler-IA">
+  <main class="my-10 text-white px-5 lg:px-20">
+    <div class="py-10 text-center">
+      <h1 class="text-2xl md:text-4xl lg:text-6xl">{i18n.recommendations.title}</h1>
+      <p class="text-sm lg:text-base text-yellow-400 pt-3">{i18n.recommendations.description}</p>
+    </div>
+    
+  </main>
+</Layout>

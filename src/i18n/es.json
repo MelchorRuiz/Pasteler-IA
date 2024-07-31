@@ -48,6 +48,10 @@
       }
     ]
   },
+  "recommendations": {
+    "title": "Nuestras Recomendaciones",
+    "description": "Encuentra tu pastel perfecto con nuestras recomendaciones personalizadas potenciadas por IA"
+  },
   "catalog": {
     "title": "Nuestro Catálogo",
     "description": "Explora nuestra selección de pasteles y encuentra el postre perfecto para cualquier ocasión",

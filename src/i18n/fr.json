@@ -48,6 +48,10 @@
       }
     ]
   },
+  "recommendations": {
+    "title": "Nos Recommandations",
+    "description": "Trouvez votre gâteau parfait avec nos recommandations personnalisées alimentées par l'IA"
+  },
   "catalog": {
     "title": "Notre Catalogue",
     "description": "Explorez notre sélection de gâteaux et trouvez le dessert parfait pour chaque occasion",
