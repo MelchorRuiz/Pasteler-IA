@@ -22,7 +22,6 @@ const User = db.collection("users") as Collection<UserDoc>;
 export async function POST(context: APIContext): Promise<Response> {
 	const formData = await context.request.formData();
 	const username = formData.get("username");
-  console.log("username", username);
 	// username must be between 4 ~ 31 characters, and only consists of lowercase letters, 0-9, -, and _
 	// keep in mind some database (e.g. mysql) are case insensitive
 	if (
@@ -36,7 +35,6 @@ export async function POST(context: APIContext): Promise<Response> {
 		});
 	}
 	const password = formData.get("password");
-  console.log("password", password);
 	if (typeof password !== "string" || password.length < 6 || password.length > 255) {
 		return new Response("Invalid password", {
 			status: 400
