@@ -52,7 +52,10 @@
     "title": "Our Recommendations",
     "description": "Write about yourself, your tastes, and preferences, and our AI will recommend the perfect cake for you. Try it now!",
     "send": "Send",
-    "chef_suggestion": "Chef's Suggestion"
+    "chef_suggestion": "Chef's Suggestion",
+    "find_your_cake_here": "Find your cake here",
+    "or": "or",
+    "ask_for_another": "Ask for another recommendation"
   },
   "catalog": {
     "title": "Our Catalog",

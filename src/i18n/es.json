@@ -52,7 +52,10 @@
     "title": "Nuestras Recomendaciones",
     "description": "Escribe sobre ti, tus gustos y preferencias, y nuestra IA te recomendará el pastel perfecto para ti. ¡Pruébalo ahora!",
     "send": "Enviar",
-    "chef_suggestion": "Sugerencia del Chef"
+    "chef_suggestion": "Sugerencia del Chef",
+    "find_your_cake_here": "Encuentra tu pastel aquí",
+    "or": "o",
+    "ask_for_another": "Pide otra recomendación"
   },
   "catalog": {
     "title": "Nuestro Catálogo",

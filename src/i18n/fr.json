@@ -52,7 +52,10 @@
     "title": "Nos Recommandations",
     "description": "Parlez de vous, de vos goûts et de vos préférences, et notre IA vous recommandera le gâteau parfait pour vous. Essayez-le maintenant !",
     "send": "Envoyer",
-    "chef_suggestion": "Suggestion du Chef"
+    "chef_suggestion": "Suggestion du Chef",
+    "find_your_cake_here": "Trouvez votre gâteau ici",
+    "or": "ou",
+    "ask_for_another": "Demander une autre recommandation"
   },
   "catalog": {
     "title": "Notre Catalogue",
