@@ -61,7 +61,8 @@
     "title": "Nuestro Catálogo",
     "description": "Explora nuestra selección de pasteles y encuentra el postre perfecto para cualquier ocasión",
     "buy": "Comprar",
-    "add_to_cart": "Agregar al carrito"
+    "add_to_cart": "Agregar al carrito",
+    "login_to_buy": "Inicia sesión para comprar"
   },
   "login": {
     "title": "Inicia sesión o crea una cuenta",

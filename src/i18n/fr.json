@@ -61,7 +61,8 @@
     "title": "Notre Catalogue",
     "description": "Explorez notre sélection de gâteaux et trouvez le dessert parfait pour chaque occasion",
     "buy": "Acheter",
-    "add_to_cart": "Ajouter au panier"
+    "add_to_cart": "Ajouter au panier",
+    "login_to_buy": "Connectez-vous pour acheter"
   },
   "login": {
     "title": "Connectez-vous ou créez un compte",

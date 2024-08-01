@@ -61,7 +61,8 @@
     "title": "Our Catalog",
     "description": "Explore our selection of cakes and find the perfect dessert for any occasion",
     "buy": "Buy",
-    "add_to_cart": "Add to cart"
+    "add_to_cart": "Add to cart",
+    "login_to_buy": "Log in to buy"
   },
   "login": {
     "title": "Log in or create an account",

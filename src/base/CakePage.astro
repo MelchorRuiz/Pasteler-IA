@@ -1,8 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { getI18N } from "..//i18n";
+import { getI18N, getPaths } from "..//i18n";
 
 const i18n = getI18N(Astro.currentLocale);
+const paths = getPaths(Astro.currentLocale);
 const { id } = Astro.params;
 interface CakeData {
   id: string;
@@ -30,11 +31,20 @@ const cake: CakeData = await response.json();
       <h1 class="text-2xl md:text-4xl lg:text-6xl">{cake.name}</h1>
       <p class="py-2">{cake.quantity}</p>
       <p class="text-sm lg:text-base text-yellow-400">{cake.description}</p>
-      <div class="flex gap-4">
-        <button class="bg-indigo-500 h-fit mt-4 py-3 px-4 rounded-lg">
-          {i18n.catalog.add_to_cart}
-        </button>
-        <div id="wallet_container"></div>
+      <div class="flex flex-col lg:flex-row lg:gap-4">
+        {Astro.locals.user ? (
+          <button class="bg-indigo-500 hover:bg-indigo-600 h-fit mt-4 py-3 px-4 rounded-lg">
+            {i18n.catalog.add_to_cart}
+          </button>
+          <div class="bg-transparent" id="wallet_container"></div>
+        ) : (
+          <a
+            href={paths.login}
+            class="bg-indigo-500 hover:bg-indigo-600 h-fit mt-4 py-3 px-4 rounded-lg"
+          >
+            {i18n.catalog.login_to_buy}
+          </a>
+        )}
       </div>
     </div>
   </main>
@@ -72,7 +82,7 @@ const cake: CakeData = await response.json();
       },
       customization: {
         texts: {
-          valueProp: "smart_option",
+          action: "buy",
         },
       },
     });

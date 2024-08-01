@@ -33,7 +33,7 @@ export const POST: APIRoute = async ({ request }) => {
         title: 'Unknown',
         quantity: product.quantity,
         unit_price: 0,
-        description: 'Unknown product'
+        currency_id: 'MXN',
       };
     }
 
@@ -42,7 +42,7 @@ export const POST: APIRoute = async ({ request }) => {
       title: cake.name,
       quantity: product.quantity,
       unit_price: parseInt(cake.price),
-      description: cake.description
+      currency_id: 'MXN',
     };
   });
 
@@ -51,11 +51,20 @@ export const POST: APIRoute = async ({ request }) => {
 
   const response = await preference.create({
     body: {
-      items
+      items,
+      shipments: {
+        cost: 200,
+        mode: 'not_specified',
+      },
+      binary_mode: true,
+      statement_descriptor: 'Pasteler-IA',
+      auto_return: 'approved',
+      back_urls: {
+        success: import.meta.env.PROD ? 'https://pasteler-ia.vercel.app/api/payments/complete-order' : 'http://localhost/api/payments/complete-order'
+      }
     }
   })
 
-  console.log(response.id);
   return new Response(JSON.stringify({ id: response.id }),
     { headers: { "content-type": "application/json" }, status: 200 }
   );
