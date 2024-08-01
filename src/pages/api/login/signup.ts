@@ -35,15 +35,19 @@ export async function POST(context: APIContext): Promise<Response> {
 		});
 	}
 	const password = formData.get("password");
+	const passwordConfirm = formData.get("password_confirm");
 	if (typeof password !== "string" || password.length < 6 || password.length > 255) {
 		return new Response("Invalid password", {
 			status: 400
 		});
+	} else if (password !== passwordConfirm) {
+		return new Response("Password does not match", {
+			status: 400
+		});
 	}
 
-	const userId = generateIdFromEntropySize(10); // 16 characters long
+	const userId = generateIdFromEntropySize(10);
 	const passwordHash = await hash(password, {
-		// recommended minimum parameters
 		memoryCost: 19456,
 		timeCost: 2,
 		outputLen: 32,

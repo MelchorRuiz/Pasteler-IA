@@ -69,7 +69,9 @@
     "signup": "Sign up",
     "subtitle": "Welcome! Please log in to your account. If you don't have one, sign up now.",
     "username": "Username",
-    "password": "Password"
+    "email": "Email",
+    "password": "Password",
+    "confirm_password": "Confirm password"
   },
   "my_account": {
     "title": "My Account",

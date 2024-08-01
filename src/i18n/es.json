@@ -69,7 +69,9 @@
     "signup": "Registrarse",
     "subtitle": "¡Bienvenido! Por favor, inicia sesión en tu cuenta. Si no tienes una, regístrate ahora.",
     "username": "Nombre de usuario",
-    "password": "Contraseña"
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirm_password": "Confirmar contraseña"
   },
   "my_account": {
     "title": "Mi Cuenta",
