@@ -70,15 +70,10 @@ const menu = [
   </ul>
 </nav>
 
-<script is:inline>
-  let menu;
-  let ul;
-  let language;
-</script>
-<script is:inline data-astro-rerun>
-  menu = document.querySelector("#menu");
-  ul = document.querySelector("nav ul");
-  language = document.querySelector("#language");
+<script>
+  const menu = document.querySelector("#menu") as HTMLDivElement;
+  const ul = document.querySelector("nav ul") as HTMLUListElement;
+  const language = document.querySelector("#language") as HTMLSelectElement;
 
   menu.addEventListener("click", () => {
     const isOpen = ul.style.display === "flex";
